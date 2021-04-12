@@ -19,6 +19,13 @@
 		CEB338912623DC4200051828 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB338902623DC4200051828 /* ComplicationController.swift */; };
 		CEB338932623DC4300051828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB338922623DC4300051828 /* Assets.xcassets */; };
 		CEB338962623DC4300051828 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB338952623DC4300051828 /* Preview Assets.xcassets */; };
+		CEB338A92623DCEE00051828 /* HooperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB338A82623DCEE00051828 /* HooperView.swift */; };
+		CEB338B62623E0BD00051828 /* VGG16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CEB338B52623E0BD00051828 /* VGG16.mlmodel */; };
+		CEFB47222623E68500A051B4 /* HopperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB47212623E68500A051B4 /* HopperView.swift */; };
+		CEFB47272623E9C100A051B4 /* MLMultiArray+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB47262623E9C100A051B4 /* MLMultiArray+Extension.swift */; };
+		CEFB472C2623EA0000A051B4 /* TrampolineMotionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB472B2623EA0000A051B4 /* TrampolineMotionClassifier.swift */; };
+		CEFB4731262400B000A051B4 /* TimestampUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB4730262400B000A051B4 /* TimestampUtils.swift */; };
+		CEFB473A262408F500A051B4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEFB4739262408F500A051B4 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +87,14 @@
 		CEB338922623DC4300051828 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEB338952623DC4300051828 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEB338972623DC4300051828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEB338A82623DCEE00051828 /* HooperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HooperView.swift; sourceTree = "<group>"; };
+		CEB338B52623E0BD00051828 /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16.mlmodel; sourceTree = "<group>"; };
+		CEFB47212623E68500A051B4 /* HopperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopperView.swift; sourceTree = "<group>"; };
+		CEFB47262623E9C100A051B4 /* MLMultiArray+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Extension.swift"; sourceTree = "<group>"; };
+		CEFB472B2623EA0000A051B4 /* TrampolineMotionClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrampolineMotionClassifier.swift; sourceTree = "<group>"; };
+		CEFB4730262400B000A051B4 /* TimestampUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampUtils.swift; sourceTree = "<group>"; };
+		CEFB4739262408F500A051B4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		CEFB474126240F6500A051B4 /* Hopper WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Hopper WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFB473A262408F500A051B4 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +123,7 @@
 				CEB3387F2623DC4200051828 /* Hopper WatchKit App */,
 				CEB3388B2623DC4200051828 /* Hopper WatchKit Extension */,
 				CEB3386D2623DC4200051828 /* Products */,
+				CEFB4738262408F500A051B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +142,7 @@
 			children = (
 				CEB3386F2623DC4200051828 /* HopperApp.swift */,
 				CEB338712623DC4200051828 /* ContentView.swift */,
+				CEB338A82623DCEE00051828 /* HooperView.swift */,
 				CEB338732623DC4200051828 /* Assets.xcassets */,
 				CEB338782623DC4200051828 /* Info.plist */,
 				CEB338752623DC4200051828 /* Preview Content */,
@@ -152,7 +170,9 @@
 		CEB3388B2623DC4200051828 /* Hopper WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				CEB3388C2623DC4200051828 /* ContentView.swift */,
+				CEFB474126240F6500A051B4 /* Hopper WatchKit Extension.entitlements */,
+				CEB338B12623DF9D00051828 /* Classifier */,
+				CEB338B02623DF9600051828 /* View */,
 				CEB3388E2623DC4200051828 /* HopperApp.swift */,
 				CEB338902623DC4200051828 /* ComplicationController.swift */,
 				CEB338922623DC4300051828 /* Assets.xcassets */,
@@ -168,6 +188,34 @@
 				CEB338952623DC4300051828 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CEB338B02623DF9600051828 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3388C2623DC4200051828 /* ContentView.swift */,
+				CEFB47212623E68500A051B4 /* HopperView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEB338B12623DF9D00051828 /* Classifier */ = {
+			isa = PBXGroup;
+			children = (
+				CEB338B52623E0BD00051828 /* VGG16.mlmodel */,
+				CEFB47262623E9C100A051B4 /* MLMultiArray+Extension.swift */,
+				CEFB472B2623EA0000A051B4 /* TrampolineMotionClassifier.swift */,
+				CEFB4730262400B000A051B4 /* TimestampUtils.swift */,
+			);
+			path = Classifier;
+			sourceTree = "<group>";
+		};
+		CEFB4738262408F500A051B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEFB4739262408F500A051B4 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB338722623DC4200051828 /* ContentView.swift in Sources */,
+				CEB338A92623DCEE00051828 /* HooperView.swift in Sources */,
 				CEB338702623DC4200051828 /* HopperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +358,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFB472C2623EA0000A051B4 /* TrampolineMotionClassifier.swift in Sources */,
+				CEB338B62623E0BD00051828 /* VGG16.mlmodel in Sources */,
+				CEFB47222623E68500A051B4 /* HopperView.swift in Sources */,
+				CEFB47272623E9C100A051B4 /* MLMultiArray+Extension.swift in Sources */,
+				CEFB4731262400B000A051B4 /* TimestampUtils.swift in Sources */,
 				CEB3388D2623DC4200051828 /* ContentView.swift in Sources */,
 				CEB3388F2623DC4200051828 /* HopperApp.swift in Sources */,
 				CEB338912623DC4200051828 /* ComplicationController.swift in Sources */,
@@ -446,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Hopper WatchKit Extension/Hopper WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Hopper WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
@@ -470,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Hopper WatchKit Extension/Hopper WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Hopper WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = WHBF4Z49B6;
