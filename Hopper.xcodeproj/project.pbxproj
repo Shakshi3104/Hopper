@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEB338702623DC4200051828 /* HopperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3386F2623DC4200051828 /* HopperApp.swift */; };
+		CEB338722623DC4200051828 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB338712623DC4200051828 /* ContentView.swift */; };
+		CEB338742623DC4200051828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB338732623DC4200051828 /* Assets.xcassets */; };
+		CEB338772623DC4200051828 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB338762623DC4200051828 /* Preview Assets.xcassets */; };
+		CEB3387C2623DC4200051828 /* Hopper WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CEB3387B2623DC4200051828 /* Hopper WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CEB338812623DC4200051828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB338802623DC4200051828 /* Assets.xcassets */; };
+		CEB338882623DC4200051828 /* Hopper WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CEB338872623DC4200051828 /* Hopper WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CEB3388D2623DC4200051828 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3388C2623DC4200051828 /* ContentView.swift */; };
+		CEB3388F2623DC4200051828 /* HopperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3388E2623DC4200051828 /* HopperApp.swift */; };
+		CEB338912623DC4200051828 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB338902623DC4200051828 /* ComplicationController.swift */; };
+		CEB338932623DC4300051828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB338922623DC4300051828 /* Assets.xcassets */; };
+		CEB338962623DC4300051828 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB338952623DC4300051828 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEB3387D2623DC4200051828 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEB338642623DC4200051828 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEB3387A2623DC4200051828;
+			remoteInfo = "Hopper WatchKit App";
+		};
+		CEB338892623DC4200051828 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEB338642623DC4200051828 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEB338862623DC4200051828;
+			remoteInfo = "Hopper WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEB3389D2623DC4300051828 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CEB338882623DC4200051828 /* Hopper WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB338A12623DC4300051828 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CEB3387C2623DC4200051828 /* Hopper WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CEB3386C2623DC4200051828 /* Hopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB3386F2623DC4200051828 /* HopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopperApp.swift; sourceTree = "<group>"; };
+		CEB338712623DC4200051828 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CEB338732623DC4200051828 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEB338762623DC4200051828 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEB338782623DC4200051828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEB3387B2623DC4200051828 /* Hopper WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hopper WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB338802623DC4200051828 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEB338822623DC4200051828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEB338872623DC4200051828 /* Hopper WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Hopper WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB3388C2623DC4200051828 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CEB3388E2623DC4200051828 /* HopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopperApp.swift; sourceTree = "<group>"; };
+		CEB338902623DC4200051828 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		CEB338922623DC4300051828 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEB338952623DC4300051828 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEB338972623DC4300051828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEB338692623DC4200051828 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB338842623DC4200051828 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEB338632623DC4200051828 = {
+			isa = PBXGroup;
+			children = (
+				CEB3386E2623DC4200051828 /* Hopper */,
+				CEB3387F2623DC4200051828 /* Hopper WatchKit App */,
+				CEB3388B2623DC4200051828 /* Hopper WatchKit Extension */,
+				CEB3386D2623DC4200051828 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEB3386D2623DC4200051828 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3386C2623DC4200051828 /* Hopper.app */,
+				CEB3387B2623DC4200051828 /* Hopper WatchKit App.app */,
+				CEB338872623DC4200051828 /* Hopper WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEB3386E2623DC4200051828 /* Hopper */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3386F2623DC4200051828 /* HopperApp.swift */,
+				CEB338712623DC4200051828 /* ContentView.swift */,
+				CEB338732623DC4200051828 /* Assets.xcassets */,
+				CEB338782623DC4200051828 /* Info.plist */,
+				CEB338752623DC4200051828 /* Preview Content */,
+			);
+			path = Hopper;
+			sourceTree = "<group>";
+		};
+		CEB338752623DC4200051828 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CEB338762623DC4200051828 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CEB3387F2623DC4200051828 /* Hopper WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				CEB338802623DC4200051828 /* Assets.xcassets */,
+				CEB338822623DC4200051828 /* Info.plist */,
+			);
+			path = "Hopper WatchKit App";
+			sourceTree = "<group>";
+		};
+		CEB3388B2623DC4200051828 /* Hopper WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3388C2623DC4200051828 /* ContentView.swift */,
+				CEB3388E2623DC4200051828 /* HopperApp.swift */,
+				CEB338902623DC4200051828 /* ComplicationController.swift */,
+				CEB338922623DC4300051828 /* Assets.xcassets */,
+				CEB338972623DC4300051828 /* Info.plist */,
+				CEB338942623DC4300051828 /* Preview Content */,
+			);
+			path = "Hopper WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		CEB338942623DC4300051828 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CEB338952623DC4300051828 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEB3386B2623DC4200051828 /* Hopper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB338A22623DC4300051828 /* Build configuration list for PBXNativeTarget "Hopper" */;
+			buildPhases = (
+				CEB338682623DC4200051828 /* Sources */,
+				CEB338692623DC4200051828 /* Frameworks */,
+				CEB3386A2623DC4200051828 /* Resources */,
+				CEB338A12623DC4300051828 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEB3387E2623DC4200051828 /* PBXTargetDependency */,
+			);
+			name = Hopper;
+			productName = Hopper;
+			productReference = CEB3386C2623DC4200051828 /* Hopper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEB3387A2623DC4200051828 /* Hopper WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB3389E2623DC4300051828 /* Build configuration list for PBXNativeTarget "Hopper WatchKit App" */;
+			buildPhases = (
+				CEB338792623DC4200051828 /* Resources */,
+				CEB3389D2623DC4300051828 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEB3388A2623DC4200051828 /* PBXTargetDependency */,
+			);
+			name = "Hopper WatchKit App";
+			productName = "Hopper WatchKit App";
+			productReference = CEB3387B2623DC4200051828 /* Hopper WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		CEB338862623DC4200051828 /* Hopper WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB3389A2623DC4300051828 /* Build configuration list for PBXNativeTarget "Hopper WatchKit Extension" */;
+			buildPhases = (
+				CEB338832623DC4200051828 /* Sources */,
+				CEB338842623DC4200051828 /* Frameworks */,
+				CEB338852623DC4200051828 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hopper WatchKit Extension";
+			productName = "Hopper WatchKit Extension";
+			productReference = CEB338872623DC4200051828 /* Hopper WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEB338642623DC4200051828 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					CEB3386B2623DC4200051828 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CEB3387A2623DC4200051828 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CEB338862623DC4200051828 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = CEB338672623DC4200051828 /* Build configuration list for PBXProject "Hopper" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEB338632623DC4200051828;
+			productRefGroup = CEB3386D2623DC4200051828 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEB3386B2623DC4200051828 /* Hopper */,
+				CEB3387A2623DC4200051828 /* Hopper WatchKit App */,
+				CEB338862623DC4200051828 /* Hopper WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEB3386A2623DC4200051828 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB338772623DC4200051828 /* Preview Assets.xcassets in Resources */,
+				CEB338742623DC4200051828 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB338792623DC4200051828 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB338812623DC4200051828 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB338852623DC4200051828 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB338962623DC4300051828 /* Preview Assets.xcassets in Resources */,
+				CEB338932623DC4300051828 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEB338682623DC4200051828 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB338722623DC4200051828 /* ContentView.swift in Sources */,
+				CEB338702623DC4200051828 /* HopperApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB338832623DC4200051828 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB3388D2623DC4200051828 /* ContentView.swift in Sources */,
+				CEB3388F2623DC4200051828 /* HopperApp.swift in Sources */,
+				CEB338912623DC4200051828 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEB3387E2623DC4200051828 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEB3387A2623DC4200051828 /* Hopper WatchKit App */;
+			targetProxy = CEB3387D2623DC4200051828 /* PBXContainerItemProxy */;
+		};
+		CEB3388A2623DC4200051828 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEB338862623DC4200051828 /* Hopper WatchKit Extension */;
+			targetProxy = CEB338892623DC4200051828 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CEB338982623DC4300051828 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEB338992623DC4300051828 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		CEB3389B2623DC4300051828 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Hopper WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = WHBF4Z49B6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Hopper WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Hopper.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		CEB3389C2623DC4300051828 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Hopper WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = WHBF4Z49B6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Hopper WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Hopper.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		CEB3389F2623DC4300051828 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WHBF4Z49B6;
+				IBSC_MODULE = Hopper_WatchKit_Extension;
+				INFOPLIST_FILE = "Hopper WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Hopper.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		CEB338A02623DC4300051828 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WHBF4Z49B6;
+				IBSC_MODULE = Hopper_WatchKit_Extension;
+				INFOPLIST_FILE = "Hopper WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Hopper.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		CEB338A32623DC4300051828 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Hopper/Preview Content\"";
+				DEVELOPMENT_TEAM = WHBF4Z49B6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Hopper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Hopper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEB338A42623DC4300051828 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Hopper/Preview Content\"";
+				DEVELOPMENT_TEAM = WHBF4Z49B6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Hopper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shakshi.Hopper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEB338672623DC4200051828 /* Build configuration list for PBXProject "Hopper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB338982623DC4300051828 /* Debug */,
+				CEB338992623DC4300051828 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB3389A2623DC4300051828 /* Build configuration list for PBXNativeTarget "Hopper WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB3389B2623DC4300051828 /* Debug */,
+				CEB3389C2623DC4300051828 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB3389E2623DC4300051828 /* Build configuration list for PBXNativeTarget "Hopper WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB3389F2623DC4300051828 /* Debug */,
+				CEB338A02623DC4300051828 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB338A22623DC4300051828 /* Build configuration list for PBXNativeTarget "Hopper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB338A32623DC4300051828 /* Debug */,
+				CEB338A42623DC4300051828 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEB338642623DC4200051828 /* Project object */;
+}
