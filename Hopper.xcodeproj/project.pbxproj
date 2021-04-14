@@ -93,6 +93,7 @@
 		CEB338972623DC4300051828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB338A82623DCEE00051828 /* HopperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopperView.swift; sourceTree = "<group>"; };
 		CEB338B52623E0BD00051828 /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16.mlmodel; sourceTree = "<group>"; };
+		CEC152C126267F3C008EED60 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEFB47212623E68500A051B4 /* HopperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopperView.swift; sourceTree = "<group>"; };
 		CEFB47262623E9C100A051B4 /* MLMultiArray+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Extension.swift"; sourceTree = "<group>"; };
 		CEFB472B2623EA0000A051B4 /* TrampolineMotionClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrampolineMotionClassifier.swift; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 		CEB338632623DC4200051828 = {
 			isa = PBXGroup;
 			children = (
+				CEC152C126267F3C008EED60 /* README.md */,
 				CEB3386E2623DC4200051828 /* Hopper */,
 				CEB3387F2623DC4200051828 /* Hopper WatchKit App */,
 				CEB3388B2623DC4200051828 /* Hopper WatchKit Extension */,
