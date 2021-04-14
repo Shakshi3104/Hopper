@@ -50,6 +50,9 @@ class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDe
     /// - Tag: Workout session
     var session: HKWorkoutSession!
     
+    /// - Tag: WCSession
+    var connector = PhoneConnector()
+    
     /// Processing when the sensor data value is acquired
     @objc private func startSensor() {
         if let data = self.motionManager.accelerometerData {
@@ -99,6 +102,15 @@ class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDe
             
             // Reset inputData
             self.inputData = [Double]()
+            
+            // Send prediction to iPhone
+            if self.connector.send(key: "Prediction", value: self.prediction) {
+                print("Success: send Prediction")
+            }
+            
+            if self.connector.send(key: "Confidence", value: self.confidence) {
+                print("Success: send Confidence")
+            }
         }
     }
     
@@ -108,7 +120,7 @@ class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDe
             self.motionManager.startAccelerometerUpdates()
         }
         
-        
+        // MARK: - Workout Session
         let config = HKWorkoutConfiguration()
         config.activityType = .fitnessGaming
         config.locationType = .indoor
@@ -135,19 +147,28 @@ class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDe
         
         session.startActivity(with: Date())
         
+        // MARK: - Timer
         self.timer = Timer.scheduledTimer(timeInterval: 1.0 / frequency,
                                           target: self,
                                           selector: #selector(self.startSensor),
                                           userInfo: nil,
                                           repeats: true)
+        
+        if self.connector.send(key: "Running", value: true) {
+            print("Success: isRunning = true")
+        }
     }
     
     /// Stop measuring the sensor data
     func stopUpdate() {
         self.timer.invalidate()
         
-        if self.motionManager.isMagnetometerActive {
+        if self.motionManager.isAccelerometerActive {
             self.motionManager.stopAccelerometerUpdates()
+        }
+        
+        if self.connector.send(key: "Running", value: false) {
+            print("Success: isRunning = false")
         }
         
         self.inputData = [Double]()

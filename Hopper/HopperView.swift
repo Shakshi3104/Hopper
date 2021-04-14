@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct HooperView: View {
+struct HopperView: View {
+    @ObservedObject var connector = WatchConnector()
+    
     var body: some View {
         VStack {
             Spacer()
@@ -15,12 +17,13 @@ struct HooperView: View {
                 .foregroundColor(.secondary)
                 .font(.title2)
             VStack {
-                Text("Prepare")
+                Text(self.connector.isRuninng ? self.connector.prediction : "Prepare")
                     .foregroundColor(.accentColor)
-                    .font(.title)
-                Text("")
-                    .fontWeight(.semibold)
                     .font(.largeTitle)
+                Text(self.connector.isRuninng ? "\(self.connector.confidence)" : "")
+                    .fontWeight(.semibold)
+                    .font(.title3)
+                    .padding(.vertical, 10)
             }.padding(.vertical, 50)
             Spacer()
         }
@@ -29,7 +32,7 @@ struct HooperView: View {
 
 struct HooperView_Previews: PreviewProvider {
     static var previews: some View {
-        HooperView()
+        HopperView()
             .preferredColorScheme(.dark)
     }
 }
