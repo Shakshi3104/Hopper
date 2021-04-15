@@ -10,6 +10,7 @@ import CoreML
 import CoreMotion
 import Combine
 import HealthKit
+import WatchKit
 
 class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDelegate {
     
@@ -154,9 +155,13 @@ class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDe
                                           userInfo: nil,
                                           repeats: true)
         
+        // Send running state to iPhone
         if self.connector.send(key: "Running", value: true) {
             print("Success: isRunning = true")
         }
+        
+        // Start feedback
+        WKInterfaceDevice.current().play(.start)
     }
     
     /// Stop measuring the sensor data
@@ -167,6 +172,7 @@ class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDe
             self.motionManager.stopAccelerometerUpdates()
         }
         
+        // Send running state to iPhone
         if self.connector.send(key: "Running", value: false) {
             print("Success: isRunning = false")
         }
@@ -174,6 +180,9 @@ class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDe
         self.inputData = [Double]()
         
         session.end()
+        
+        // Stop feedback
+        WKInterfaceDevice.current().play(.stop)
     }
     
     // MARK: -
