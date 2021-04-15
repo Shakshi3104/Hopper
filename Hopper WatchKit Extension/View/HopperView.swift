@@ -14,7 +14,7 @@ struct HopperView: View {
     var body: some View {
         VStack {
             Text(isRunning ? classifier.prediction : "Prepare")
-                .foregroundColor(.blue)
+                .foregroundColor(.accentColor)
                 .font(.title3)
             Text(isRunning ? "\(classifier.confidence)" : "")
                 .padding()
