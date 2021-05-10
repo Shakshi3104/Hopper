@@ -80,6 +80,8 @@
 		CE5C03DD2648E10A004D50E9 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		CE5C03DF2648E151004D50E9 /* TrampolineMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrampolineMotion.swift; sourceTree = "<group>"; };
 		CE5C03E1264900C6004D50E9 /* VGG16_GAP.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16_GAP.mlmodel; sourceTree = "<group>"; };
+		CE5C03E426490314004D50E9 /* IMG_5760.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_5760.PNG; sourceTree = "<group>"; };
+		CE5C03E526490314004D50E9 /* IMG_5757.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_5757.PNG; sourceTree = "<group>"; };
 		CEB3386C2623DC4200051828 /* Hopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB3386F2623DC4200051828 /* HopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopperApp.swift; sourceTree = "<group>"; };
 		CEB338712623DC4200051828 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -144,9 +146,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CE5C03E3264901D7004D50E9 /* materials */ = {
+			isa = PBXGroup;
+			children = (
+				CE5C03E526490314004D50E9 /* IMG_5757.PNG */,
+				CE5C03E426490314004D50E9 /* IMG_5760.PNG */,
+			);
+			path = materials;
+			sourceTree = "<group>";
+		};
 		CEB338632623DC4200051828 = {
 			isa = PBXGroup;
 			children = (
+				CE5C03E3264901D7004D50E9 /* materials */,
 				CEC152C126267F3C008EED60 /* README.md */,
 				CEB3386E2623DC4200051828 /* Hopper */,
 				CEB3387F2623DC4200051828 /* Hopper WatchKit App */,
