@@ -23,10 +23,10 @@ struct SummaryView: View {
             }
             
             Section(header: Text("Activity")) {
-                ListRow(key: "Total Time", value: "0:00:00")
-                ListRow(key: "Active Kilocalories", value: "0 KCAL")
-                ListRow(key: "Total Kilocalories", value: "0 KCAL")
-                ListRow(key: "Avg. Heart Rate", value: "0 BPM")
+                FitnessTotalTimeListRow(timeInterval: 0)
+                FitnessListRow(key: "Active Kilocalories", value: "\(0)", unit: "KCAL", foregroundColor: .pink)
+                FitnessListRow(key: "Total kilocalories", value: "\(0)", unit: "KCAL", foregroundColor: .pink)
+                FitnessListRow(key: "Avg. Heart Rate", value: "\(0)", unit: "BPM", foregroundColor: .red)
             }
         }.listStyle(InsetGroupedListStyle())
     }
@@ -47,8 +47,55 @@ struct ListRow: View {
     }
 }
 
+struct FitnessTotalTimeListRow: View {
+    var timeInterval: TimeInterval
+    
+    var body: some View {
+        HStack {
+            Text("Total Time")
+                .font(Font.system(.body, design: .rounded))
+            Spacer()
+            Text(self.convertTimeIntervalToString())
+                .font(Font.system(.body, design: .rounded))
+                .foregroundColor(.yellow)
+        }
+    }
+    
+    private func convertTimeIntervalToString() -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [.hour, .minute, .second]
+        formatter.zeroFormattingBehavior = .pad
+        return formatter.string(from: timeInterval) ?? "NaN"
+    }
+}
+
+struct FitnessListRow: View {
+    var key: String
+    var value: String
+    var unit: String
+    var foregroundColor: Color = .secondary
+    
+    var body: some View {
+        HStack {
+            Text(key)
+                .font(Font.system(.body, design: .rounded))
+            Spacer()
+            HStack(alignment: .bottom) {
+                Text(value)
+                    .font(Font.system(.body, design: .rounded).monospacedDigit())
+                    .foregroundColor(foregroundColor)
+                Text(unit)
+                    .font(Font.system(.footnote, design: .rounded))
+                    .foregroundColor(foregroundColor)
+            }
+        }
+    }
+}
+
 struct SummaryView_Previews: PreviewProvider {
     static var previews: some View {
         SummaryView(isPresent: Binding<Bool>.constant(true))
+            .preferredColorScheme(.dark)
     }
 }
