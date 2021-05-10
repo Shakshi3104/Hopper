@@ -11,6 +11,7 @@
 		CE516D37262677280090C470 /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE516D36262677280090C470 /* WatchConnector.swift */; };
 		CE5C03DE2648E10A004D50E9 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C03DD2648E10A004D50E9 /* SummaryView.swift */; };
 		CE5C03E02648E151004D50E9 /* TrampolineMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C03DF2648E151004D50E9 /* TrampolineMotion.swift */; };
+		CE5C03E2264900C6004D50E9 /* VGG16_GAP.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE5C03E1264900C6004D50E9 /* VGG16_GAP.mlmodel */; };
 		CEB338702623DC4200051828 /* HopperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3386F2623DC4200051828 /* HopperApp.swift */; };
 		CEB338722623DC4200051828 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB338712623DC4200051828 /* ContentView.swift */; };
 		CEB338742623DC4200051828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB338732623DC4200051828 /* Assets.xcassets */; };
@@ -24,7 +25,6 @@
 		CEB338932623DC4300051828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB338922623DC4300051828 /* Assets.xcassets */; };
 		CEB338962623DC4300051828 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB338952623DC4300051828 /* Preview Assets.xcassets */; };
 		CEB338A92623DCEE00051828 /* HopperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB338A82623DCEE00051828 /* HopperView.swift */; };
-		CEB338B62623E0BD00051828 /* VGG16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CEB338B52623E0BD00051828 /* VGG16.mlmodel */; };
 		CEFB47222623E68500A051B4 /* HopperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB47212623E68500A051B4 /* HopperView.swift */; };
 		CEFB47272623E9C100A051B4 /* MLMultiArray+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB47262623E9C100A051B4 /* MLMultiArray+Extension.swift */; };
 		CEFB472C2623EA0000A051B4 /* TrampolineMotionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB472B2623EA0000A051B4 /* TrampolineMotionClassifier.swift */; };
@@ -79,6 +79,7 @@
 		CE516D36262677280090C470 /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
 		CE5C03DD2648E10A004D50E9 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		CE5C03DF2648E151004D50E9 /* TrampolineMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrampolineMotion.swift; sourceTree = "<group>"; };
+		CE5C03E1264900C6004D50E9 /* VGG16_GAP.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16_GAP.mlmodel; sourceTree = "<group>"; };
 		CEB3386C2623DC4200051828 /* Hopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB3386F2623DC4200051828 /* HopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopperApp.swift; sourceTree = "<group>"; };
 		CEB338712623DC4200051828 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		CEB338952623DC4300051828 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEB338972623DC4300051828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB338A82623DCEE00051828 /* HopperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopperView.swift; sourceTree = "<group>"; };
-		CEB338B52623E0BD00051828 /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16.mlmodel; sourceTree = "<group>"; };
 		CEC152C126267F3C008EED60 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEFB47212623E68500A051B4 /* HopperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopperView.swift; sourceTree = "<group>"; };
 		CEFB47262623E9C100A051B4 /* MLMultiArray+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Extension.swift"; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				CE516D312626760D0090C470 /* PhoneConnector.swift */,
-				CEB338B52623E0BD00051828 /* VGG16.mlmodel */,
+				CE5C03E1264900C6004D50E9 /* VGG16_GAP.mlmodel */,
 				CEFB47262623E9C100A051B4 /* MLMultiArray+Extension.swift */,
 				CEFB472B2623EA0000A051B4 /* TrampolineMotionClassifier.swift */,
 				CEFB4730262400B000A051B4 /* TimestampUtils.swift */,
@@ -392,7 +392,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEFB472C2623EA0000A051B4 /* TrampolineMotionClassifier.swift in Sources */,
-				CEB338B62623E0BD00051828 /* VGG16.mlmodel in Sources */,
 				CEFB47222623E68500A051B4 /* HopperView.swift in Sources */,
 				CEFB47272623E9C100A051B4 /* MLMultiArray+Extension.swift in Sources */,
 				CEFB4731262400B000A051B4 /* TimestampUtils.swift in Sources */,
@@ -400,6 +399,7 @@
 				CEB3388F2623DC4200051828 /* HopperApp.swift in Sources */,
 				CEB338912623DC4200051828 /* ComplicationController.swift in Sources */,
 				CE516D322626760D0090C470 /* PhoneConnector.swift in Sources */,
+				CE5C03E2264900C6004D50E9 /* VGG16_GAP.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

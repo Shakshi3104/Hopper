@@ -15,11 +15,11 @@ import WatchKit
 class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDelegate {
     
     /// - Tag: MLModel for detection of motion on a trampoline
-    private let model: VGG16 = {
+    private let model: VGG16_GAP = {
         do {
             let config = MLModelConfiguration()
             config.computeUnits = .all
-            return try VGG16(configuration: config)
+            return try VGG16_GAP(configuration: config)
         } catch {
             print(error)
             fatalError("Couldn't create VGG16")
