@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SummaryView: View {
-    @Binding var isPresent: Bool
     @ObservedObject var connector = WatchConnector.shared
     
     var body: some View {
@@ -56,7 +55,7 @@ struct FitnessTotalTimeListRow: View {
                 .font(Font.system(.body, design: .rounded))
             Spacer()
             Text(self.convertTimeIntervalToString())
-                .font(Font.system(.body, design: .rounded))
+                .font(Font.system(.body, design: .rounded).monospacedDigit())
                 .foregroundColor(.yellow)
         }
     }
@@ -95,7 +94,7 @@ struct FitnessListRow: View {
 
 struct SummaryView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryView(isPresent: Binding<Bool>.constant(true))
+        SummaryView()
             .preferredColorScheme(.dark)
     }
 }

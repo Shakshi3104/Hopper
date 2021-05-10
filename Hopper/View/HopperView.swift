@@ -17,16 +17,28 @@ struct HopperView: View {
                 .foregroundColor(.secondary)
                 .font(.title2)
             VStack {
-                Text(self.connector.isRuninng ? self.connector.prediction : "Prepare")
+                Text(self.connector.runinng ? self.connector.prediction : "Prepare")
                     .foregroundColor(.accentColor)
                     .font(.largeTitle)
-                Text(self.connector.isRuninng ? "\(self.connector.confidence)" : "")
+                Text(self.connector.runinng ? "\(self.connector.confidence)" : "")
                     .fontWeight(.semibold)
                     .font(.title3)
                     .padding(.vertical, 10)
             }.padding(.vertical, 50)
             Spacer()
         }
+        .sheet(isPresented: $connector.isPresented, content: {
+            NavigationView {
+                SummaryView()
+                    .navigationTitle("Hopper")
+                    .navigationBarItems(trailing:
+                                            Button(action: {
+                                                self.connector.isPresented = false
+                                            }, label: {
+                                                Text("Done")
+                                            }))
+            }
+        })
     }
 }
 

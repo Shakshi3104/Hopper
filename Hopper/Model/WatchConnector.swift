@@ -10,15 +10,20 @@ import WatchConnectivity
 import Combine
 
 class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
-    // Stand alone
+    /// - Tag: Stand alone object
     static var shared = WatchConnector()
     
-    @Published var isRuninng: Bool = false
+    /// - Tag: Running state
+    @Published var runinng: Bool = false
     
+    /// - Tag: Trampoline motion prediction
     @Published var prediction: String = "None"
     @Published var confidence: Double = 0.0
     
     @Published var motionCount: TrampolineMotionCount = TrampolineMotionCount()
+    
+    /// - Tag: Summary view state
+    @Published var isPresented: Bool = false
     
     override init() {
         super.init()
@@ -45,10 +50,14 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
         DispatchQueue.main.async {
             if let isRunning = message["Running"] as? Bool {
                 print(isRunning)
-                self.isRuninng = isRunning
+                self.runinng = isRunning
                 
                 if isRunning {
+                    // Reset motion count
                     self.motionCount = TrampolineMotionCount()
+                }
+                else {
+                    self.isPresented = true
                 }
             }
             
