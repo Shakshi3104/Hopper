@@ -10,10 +10,15 @@ import WatchConnectivity
 import Combine
 
 class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
+    // Stand alone
+    static var shared = WatchConnector()
+    
     @Published var isRuninng: Bool = false
     
     @Published var prediction: String = "None"
     @Published var confidence: Double = 0.0
+    
+    @Published var motionCount: TrampolineMotionCount = TrampolineMotionCount()
     
     override init() {
         super.init()
@@ -41,11 +46,18 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
             if let isRunning = message["Running"] as? Bool {
                 print(isRunning)
                 self.isRuninng = isRunning
+                
+                if isRunning {
+                    self.motionCount = TrampolineMotionCount()
+                }
             }
             
             if let prediction = message["Prediction"] as? String {
                 print(prediction)
                 self.prediction = prediction
+                
+                let predictionLabel = TrampolineMotionLabel(rawValue: prediction)
+                self.motionCount.countUp(motion: predictionLabel!)
             }
             
             if let confidence = message["Confidence"] as? Double {

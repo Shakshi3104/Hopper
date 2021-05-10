@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HopperView: View {
-    @ObservedObject var connector = WatchConnector()
+    @ObservedObject var connector = WatchConnector.shared
     
     var body: some View {
         VStack {

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE516D322626760D0090C470 /* PhoneConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE516D312626760D0090C470 /* PhoneConnector.swift */; };
 		CE516D37262677280090C470 /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE516D36262677280090C470 /* WatchConnector.swift */; };
+		CE5C03DE2648E10A004D50E9 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C03DD2648E10A004D50E9 /* SummaryView.swift */; };
+		CE5C03E02648E151004D50E9 /* TrampolineMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C03DF2648E151004D50E9 /* TrampolineMotion.swift */; };
 		CEB338702623DC4200051828 /* HopperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3386F2623DC4200051828 /* HopperApp.swift */; };
 		CEB338722623DC4200051828 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB338712623DC4200051828 /* ContentView.swift */; };
 		CEB338742623DC4200051828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB338732623DC4200051828 /* Assets.xcassets */; };
@@ -75,6 +77,8 @@
 /* Begin PBXFileReference section */
 		CE516D312626760D0090C470 /* PhoneConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnector.swift; sourceTree = "<group>"; };
 		CE516D36262677280090C470 /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
+		CE5C03DD2648E10A004D50E9 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		CE5C03DF2648E151004D50E9 /* TrampolineMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrampolineMotion.swift; sourceTree = "<group>"; };
 		CEB3386C2623DC4200051828 /* Hopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB3386F2623DC4200051828 /* HopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopperApp.swift; sourceTree = "<group>"; };
 		CEB338712623DC4200051828 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,6 +125,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE5C03DB2648E0D8004D50E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEB338712623DC4200051828 /* ContentView.swift */,
+				CEB338A82623DCEE00051828 /* HopperView.swift */,
+				CE5C03DD2648E10A004D50E9 /* SummaryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE5C03DC2648E0EB004D50E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE516D36262677280090C470 /* WatchConnector.swift */,
+				CE5C03DF2648E151004D50E9 /* TrampolineMotion.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CEB338632623DC4200051828 = {
 			isa = PBXGroup;
 			children = (
@@ -146,13 +169,12 @@
 		CEB3386E2623DC4200051828 /* Hopper */ = {
 			isa = PBXGroup;
 			children = (
+				CE5C03DC2648E0EB004D50E9 /* Model */,
+				CE5C03DB2648E0D8004D50E9 /* View */,
 				CEB3386F2623DC4200051828 /* HopperApp.swift */,
-				CEB338712623DC4200051828 /* ContentView.swift */,
-				CEB338A82623DCEE00051828 /* HopperView.swift */,
 				CEB338732623DC4200051828 /* Assets.xcassets */,
 				CEB338782623DC4200051828 /* Info.plist */,
 				CEB338752623DC4200051828 /* Preview Content */,
-				CE516D36262677280090C470 /* WatchConnector.swift */,
 			);
 			path = Hopper;
 			sourceTree = "<group>";
@@ -358,6 +380,8 @@
 			files = (
 				CEB338722623DC4200051828 /* ContentView.swift in Sources */,
 				CE516D37262677280090C470 /* WatchConnector.swift in Sources */,
+				CE5C03E02648E151004D50E9 /* TrampolineMotion.swift in Sources */,
+				CE5C03DE2648E10A004D50E9 /* SummaryView.swift in Sources */,
 				CEB338A92623DCEE00051828 /* HopperView.swift in Sources */,
 				CEB338702623DC4200051828 /* HopperApp.swift in Sources */,
 			);
