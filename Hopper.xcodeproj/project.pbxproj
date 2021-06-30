@@ -75,13 +75,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE254118268C133900B5C416 /* IMG_5761.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_5761.PNG; sourceTree = "<group>"; };
 		CE516D312626760D0090C470 /* PhoneConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnector.swift; sourceTree = "<group>"; };
 		CE516D36262677280090C470 /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
 		CE5C03DD2648E10A004D50E9 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		CE5C03DF2648E151004D50E9 /* TrampolineMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrampolineMotion.swift; sourceTree = "<group>"; };
 		CE5C03E1264900C6004D50E9 /* VGG16_GAP.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16_GAP.mlmodel; sourceTree = "<group>"; };
 		CE5C03E426490314004D50E9 /* IMG_5760.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_5760.PNG; sourceTree = "<group>"; };
-		CE5C03E526490314004D50E9 /* IMG_5757.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_5757.PNG; sourceTree = "<group>"; };
 		CEB3386C2623DC4200051828 /* Hopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB3386F2623DC4200051828 /* HopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopperApp.swift; sourceTree = "<group>"; };
 		CEB338712623DC4200051828 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -149,8 +149,8 @@
 		CE5C03E3264901D7004D50E9 /* materials */ = {
 			isa = PBXGroup;
 			children = (
-				CE5C03E526490314004D50E9 /* IMG_5757.PNG */,
 				CE5C03E426490314004D50E9 /* IMG_5760.PNG */,
+				CE254118268C133900B5C416 /* IMG_5761.PNG */,
 			);
 			path = materials;
 			sourceTree = "<group>";
