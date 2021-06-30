@@ -215,7 +215,6 @@ class TrampolineMotionClassifier: NSObject, ObservableObject {
         }
         
         self.inputData = [Double]()
-        self.resetWorkout()
         
         // End workout
         session.end()
