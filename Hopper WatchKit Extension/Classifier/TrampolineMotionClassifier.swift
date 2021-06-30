@@ -12,7 +12,7 @@ import Combine
 import HealthKit
 import WatchKit
 
-class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDelegate {
+class TrampolineMotionClassifier: NSObject, ObservableObject {
     
     /// - Tag: MLModel for detection of motion on a trampoline
     private let model: VGG16_GAP = {
@@ -50,6 +50,16 @@ class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDe
     
     /// - Tag: Workout session
     var session: HKWorkoutSession!
+    var builder: HKLiveWorkoutBuilder!
+    
+    /// - Tag: Workout statistics
+    // - heartrate
+    // - activae calories
+    var heartrates: [Double] = []
+    var activeCalories: Double = 0
+    
+    // start date
+    var startDate: Date!
     
     /// - Tag: WCSession
     var connector = PhoneConnector()
@@ -144,9 +154,17 @@ class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDe
         }
         
         session = try! HKWorkoutSession(healthStore: healthStore, configuration: config)
+        builder = session.associatedWorkoutBuilder()
         session.delegate = self
+        builder.delegate = self
+        
+        builder.dataSource = HKLiveWorkoutDataSource(healthStore: healthStore,
+                                                     workoutConfiguration: config)
         
         session.startActivity(with: Date())
+        builder.beginCollection(withStart: Date()) { (success, error) in
+            // The workout has started.
+        }
         
         // MARK: - Timer
         self.timer = Timer.scheduledTimer(timeInterval: 1.0 / frequency,
@@ -154,6 +172,8 @@ class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDe
                                           selector: #selector(self.startSensor),
                                           userInfo: nil,
                                           repeats: true)
+        
+        self.startDate = Date()
         
         // Send running state to iPhone
         if self.connector.send(key: "Running", value: true) {
@@ -177,8 +197,27 @@ class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDe
             print("Success: isRunning = false")
         }
         
-        self.inputData = [Double]()
+        // Send calorie
+        if self.connector.send(key: "Energy", value: self.activeCalories) {
+            print("Success: activeCalories = \(self.activeCalories)")
+        }
         
+        // Send avg. heart rate
+        let avgHeartRate =  heartrates.count != 0 ? heartrates.reduce(0, +) / Double(heartrates.count) : 0
+        if self.connector.send(key: "Heartrate", value: avgHeartRate) {
+            print("Success: avgHeartRate = \(avgHeartRate)")
+        }
+        
+        // Send workout time
+        let workoutTime = Date().timeIntervalSince(self.startDate)
+        if self.connector.send(key: "TotalTime", value: workoutTime) {
+            print("Success: workoutTime = \(workoutTime)")
+        }
+        
+        self.inputData = [Double]()
+        self.resetWorkout()
+        
+        // End workout
         session.end()
         
         // Stop feedback
@@ -186,13 +225,63 @@ class TrampolineMotionClassifier: NSObject, ObservableObject, HKWorkoutSessionDe
     }
     
     // MARK: -
+    func resetWorkout() {
+        self.activeCalories = 0
+        self.heartrates = []
+    }
+    
+    // MARK: - Update statistics
+    func updateForStatistics(_ statistics: HKStatistics?) {
+        guard let statistics = statistics else { return }
+        
+        switch statistics.quantityType {
+        case HKQuantityType.quantityType(forIdentifier: .heartRate):
+            let heartRateUnit = HKUnit.count().unitDivided(by: HKUnit.minute())
+            let value = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit)
+            let roundedValue = Double( round(1 * value! ) / 1)
+            self.heartrates.append(roundedValue)
+        case HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned):
+            let energyUnit = HKUnit.kilocalorie()
+            let value = statistics.sumQuantity()?.doubleValue(for: energyUnit)
+            self.activeCalories = Double( round(1 * value!) / 1)
+        default:
+            return
+        }
+    }
+}
+
+// MARK: - HKWorkoutSessionDelegate
+extension TrampolineMotionClassifier: HKWorkoutSessionDelegate {
     func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {
         if toState == .ended {
             print("The workout has now ended.")
+            builder.endCollection(withEnd: Date()) { success, error in
+                self.resetWorkout()
+            }
         }
     }
     
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
         
     }
+}
+
+// MARK: - HKLiveWorkoutBuilderDelegate
+extension TrampolineMotionClassifier: HKLiveWorkoutBuilderDelegate {
+    func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
+        for type in collectedTypes {
+            guard let quantityType = type as? HKQuantityType else {
+                return
+            }
+            
+            let statistics = workoutBuilder.statistics(for: quantityType)
+            updateForStatistics(statistics)
+        }
+    }
+    
+    func workoutBuilderDidCollectEvent(_ workoutBuilder: HKLiveWorkoutBuilder) {
+        
+    }
+    
+    
 }

@@ -22,6 +22,11 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     
     @Published var motionCount: TrampolineMotionCount = TrampolineMotionCount()
     
+    /// - Tag: Workout statistics
+    @Published var totalTime: TimeInterval = TimeInterval()
+    @Published var activeCalories: Double = 0
+    @Published var avgHeartRate: Double = 0
+    
     /// - Tag: Summary view state
     @Published var isPresented: Bool = false
     
@@ -72,6 +77,18 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
             if let confidence = message["Confidence"] as? Double {
                 print(confidence)
                 self.confidence = confidence
+            }
+            
+            if let totalTime = message["TotalTime"] as? TimeInterval {
+                self.totalTime = totalTime
+            }
+            
+            if let activeCalories = message["Energy"] as? Double {
+                self.activeCalories = activeCalories
+            }
+            
+            if let avgHeartRate = message["Heartrate"] as? Double {
+                self.avgHeartRate = avgHeartRate
             }
         }
     }

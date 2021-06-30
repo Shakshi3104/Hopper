@@ -22,10 +22,9 @@ struct SummaryView: View {
             }
             
             Section(header: Text("Activity")) {
-                FitnessTotalTimeListRow(timeInterval: 0)
-                FitnessListRow(key: "Active Kilocalories", value: "\(0)", unit: "KCAL", foregroundColor: .pink)
-                FitnessListRow(key: "Total kilocalories", value: "\(0)", unit: "KCAL", foregroundColor: .pink)
-                FitnessListRow(key: "Avg. Heart Rate", value: "\(0)", unit: "BPM", foregroundColor: .red)
+                FitnessTotalTimeListRow(timeInterval: connector.totalTime)
+                FitnessListRow(key: "Active Kilocalories", value: "\(Int(connector.activeCalories))", unit: "KCAL", foregroundColor: .pink)
+                FitnessListRow(key: "Avg. Heart Rate", value: "\(Int(connector.avgHeartRate))", unit: "BPM", foregroundColor: .red)
             }
         }.listStyle(InsetGroupedListStyle())
     }
