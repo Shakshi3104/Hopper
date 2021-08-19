@@ -48,6 +48,9 @@ class TrampolineMotionClassifier: NSObject, ObservableObject {
     // Timer
     private var timer = Timer()
     
+    /// - Tag: Health Store
+    let healthStore: HKHealthStore
+    
     /// - Tag: Workout session
     var session: HKWorkoutSession!
     var builder: HKLiveWorkoutBuilder!
@@ -63,6 +66,26 @@ class TrampolineMotionClassifier: NSObject, ObservableObject {
     
     /// - Tag: WCSession
     var connector = PhoneConnector()
+    
+    override init() {
+        // Initalizer healthStore
+        self.healthStore = HKHealthStore()
+        
+        let typesToShare: Set = [
+            HKQuantityType.workoutType()
+        ]
+        
+        // The quantity types to read from the health store.
+        let typesToRead: Set = [
+            HKQuantityType.quantityType(forIdentifier: .heartRate)!,
+            HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
+        ]
+        
+        // Request authorization for those quantity types.
+        healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
+            // Handle error.
+        }
+    }
     
     /// Processing when the sensor data value is acquired
     @objc private func startSensor() {
@@ -135,23 +158,6 @@ class TrampolineMotionClassifier: NSObject, ObservableObject {
         let config = HKWorkoutConfiguration()
         config.activityType = .fitnessGaming
         config.locationType = .indoor
-        
-        let healthStore = HKHealthStore()
-        
-        let typesToShare: Set = [
-            HKQuantityType.workoutType()
-        ]
-        
-        // The quantity types to read from the health store.
-        let typesToRead: Set = [
-            HKQuantityType.quantityType(forIdentifier: .heartRate)!,
-            HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
-        ]
-        
-        // Request authorization for those quantity types.
-        healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
-            // Handle error.
-        }
         
         session = try! HKWorkoutSession(healthStore: healthStore, configuration: config)
         builder = session.associatedWorkoutBuilder()
