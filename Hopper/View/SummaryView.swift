@@ -24,7 +24,7 @@ struct SummaryView: View {
             Section(header: Text("Activity")) {
                 FitnessTotalTimeListRow(timeInterval: connector.totalTime)
                 FitnessListRow(key: "Active Kilocalories", value: "\(Int(connector.activeCalories))", unit: "KCAL", foregroundColor: .pink)
-                FitnessListRow(key: "Avg. Heart Rate", value: "\(Int(connector.avgHeartRate))", unit: "BPM", foregroundColor: .red)
+                FitnessListRow(key: "Avg. Heart Rate", value: connector.avgHeartRate > 0 ? "\(Int(connector.avgHeartRate))" : "--", unit: "BPM", foregroundColor: .red)
             }
         }.listStyle(InsetGroupedListStyle())
     }
